@@ -79,16 +79,9 @@ DIVIDE([Actual Revenue] - [Forecast Revenue], [Forecast Revenue], 0)
 ## File Structure
 
 ```
-revenue-forecasting-dashboard/
-├── dashboard/
-│   └── revenue_forecast.pbix       # Power BI file
-├── data/
-│   └── sample_revenue_data.csv     # Anonymised sample data
-├── notebooks/
-│   └── regression_modelling.ipynb  # Forecast model development
-├── screenshots/
-│   ├── overview.png
-│   └── drilldown_view.png
+revenue_forecasting_dashboard/
+├── generate_data.py          # Generates synthetic revenue data
+├── regression_modelling.py   # Builds and evaluates regression forecast models
 └── README.md
 ```
 
@@ -102,14 +95,19 @@ revenue-forecasting-dashboard/
 
 ---
 
-## How to Open
+## How to Run
+```
+# Clone the repo
+git clone https://github.com/simranksandhu0/revenue_forecasting_dashboard.git
+cd revenue_forecasting_dashboard
 
-1. Download `dashboard/revenue_forecast.pbix`
-2. Open in Power BI Desktop (free download from Microsoft)
-3. Connect to `data/sample_revenue_data.csv` if prompted to refresh the data source
+# Generate synthetic data
+python generate_data.py
 
----
+# Run regression modelling
+python regression_modelling.py
+```
 
-## Screenshots
+## Notes
 
-*(Add screenshots of the dashboard here once published)*
+The regression model outputs forecast coefficients designed to be loaded into a Power BI dashboard. The Python scripts here cover the data generation and modelling layer; the Power BI file is not included in this repo.
